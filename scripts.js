@@ -50,15 +50,3 @@ document.getElementById("eliminar-btn").addEventListener("click", function() {
     // Cerrar el modal después de borrar la información
     document.getElementById("myModal").style.display = "none";
 });
-
-// Función para cerrar la ventana modal
-document.getElementById("modal-close").addEventListener("click", function() {
-    document.getElementById("myModal").style.display = "none";
-});
-
-// Cerrar la ventana modal si el usuario hace clic fuera de ella
-window.onclick = function(event) {
-    if (event.target == document.getElementById("myModal")) {
-        document.getElementById("myModal").style.display = "none";
-    }
-};

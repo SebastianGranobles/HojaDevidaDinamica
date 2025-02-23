@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Vida</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hoja de Vida</h1>
+
+        <!-- Formulario para ingresar la información -->
+        <div class="form-container">
+            <form id="form-hoja-vida">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" required><br>
+
+                <label for="estudios">Estudios:</label>
+                <textarea id="estudios" required></textarea><br>
+
+                <label for="referencias">Referencias Laborales:</label>
+                <textarea id="referencias" required></textarea><br>
+
+                <label for="habilidades">Habilidades:</label>
+                <textarea id="habilidades" required></textarea><br>
+
+                <label for="foto">Selecciona una foto:</label>
+                <input type="file" id="foto" accept="image/*"><br>
+
+                <button type="submit">Crear Hoja de Vida</button>
+            </form>
+        </div>
+
+        <!-- Contenedor de error -->
+        <div class="error-message hidden" id="error-message">
+            <p>Por favor, completa todos los campos.</p>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar la hoja de vida -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modal-close">&times;</span>
+            <h2>Hoja de Vida de <span id="nombre-result"></span></h2>
+            <img id="foto-result" alt="Foto de Perfil">
+            <p><strong>Estudios:</strong> <span id="estudios-result"></span></p>
+            <p><strong>Referencias Laborales:</strong> <span id="referencias-result"></span></p>
+            <p><strong>Habilidades:</strong> <span id="habilidades-result"></span></p>
+
+            <div class="btn-container">
+                <!-- Botones de borrar y cerrar -->
+                <button id="eliminar-btn"></button>
+                <button id="modal-close2" class="hidden">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

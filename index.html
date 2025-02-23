@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoja de Vida</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Formato de Hoja de Vida</title>
+ <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -12,50 +12,72 @@
         <h1>Hoja de Vida</h1>
 
         <!-- Formulario para ingresar la información -->
-        <div class="form-container">
-            <form id="form-hoja-vida">
+        <form id="form-hoja-vida">
+            <div class="form-group">
                 <label for="nombre">Nombre Completo:</label>
-                <input type="text" id="nombre" required><br>
+                <input type="text" id="nombre" required>
+            </div>
 
+            <!-- Campo "Sobre ti" -->
+            <div class="form-group">
+                <label for="sobre-ti">Sobre ti:</label>
+                <textarea id="sobre-ti" required></textarea>
+            </div>
+
+            <!-- Campo Estudios -->
+            <div class="form-group">
                 <label for="estudios">Estudios:</label>
-                <textarea id="estudios" required></textarea><br>
+                <select id="estudios" required>
+                    <option value="">Selecciona tu nivel de estudios</option>
+                    <option value="Primaria">Primaria</option>
+                    <option value="Secundaria">Secundaria</option>
+                    <option value="Bachillerato">Bachillerato</option>
+                    <option value="Universitario">Universitario</option>
+                </select>
+            </div>
 
+            <div class="form-group">
                 <label for="referencias">Referencias Laborales:</label>
-                <textarea id="referencias" required></textarea><br>
+                <textarea id="referencias" required></textarea>
+            </div>
 
+            <div class="form-group">
                 <label for="habilidades">Habilidades:</label>
-                <textarea id="habilidades" required></textarea><br>
+                <textarea id="habilidades" required></textarea>
+            </div>
 
+            <div class="form-group">
                 <label for="foto">Selecciona una foto:</label>
-                <input type="file" id="foto" accept="image/*"><br>
+                <input type="file" id="foto" accept="image/*">
+            </div>
 
-                <button type="submit">Crear Hoja de Vida</button>
-            </form>
-        </div>
+            <button type="submit">Crear Hoja de Vida</button>
+        </form>
 
         <!-- Contenedor de error -->
-        <div class="error-message hidden" id="error-message">
+        <div class="error-message" id="error-message" style="display: none;">
             <p>Por favor, completa todos los campos.</p>
         </div>
     </div>
 
     <!-- Modal para mostrar la hoja de vida -->
-    <div id="myModal" class="modal">
+    <div id="myModal" style="display: none;">
         <div class="modal-content">
-            <span class="modal-close" id="modal-close">&times;</span>
-            <h2>Hoja de Vida de <span id="nombre-result"></span></h2>
-            <img id="foto-result" alt="Foto de Perfil">
-            <p><strong>Estudios:</strong> <span id="estudios-result"></span></p>
-            <p><strong>Referencias Laborales:</strong> <span id="referencias-result"></span></p>
-            <p><strong>Habilidades:</strong> <span id="habilidades-result"></span></p>
-
-            <div class="btn-container">
-                <!-- Botones de borrar y cerrar -->
-                <button id="eliminar-btn"></button>
-                <button id="modal-close2" class="hidden">Cerrar</button>
+            <div class="modal-header">
+                <h5>Hoja de Vida de vida <span id="nombre-result"></span></h5>
+            </div>
+            <div class="modal-body">
+                <img id="foto-result" alt="Foto de Perfil">
+                <p><strong>Sobre ti:</strong> <span id="sobre-ti-result"></span></p>
+                <p><strong>Estudios:</strong> <span id="estudios-result"></span></p>
+                <p><strong>Referencias Laborales:</strong> <span id="referencias-result"></span></p>
+                <p><strong>Habilidades:</strong> <span id="habilidades-result"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button id="eliminar-btn">cerrar ventana</button>
             </div>
         </div>
     </div>
-    <script src="scripts.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>

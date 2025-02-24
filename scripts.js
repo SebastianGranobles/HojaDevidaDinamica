@@ -5,16 +5,19 @@ document.getElementById("form-hoja-vida").addEventListener("submit", function(ev
 
     // Obtener valores del formulario
     const nombre = document.getElementById("nombre").value;
+
+const sobre ti =
+document.getElementById("Sobre ti").value;
+
     const estudios =
-document.getElemntById("Sobre-ti").value;
- const sobre ti =
  document.getElementById("estudios").value;
+
     const referencias = document.getElementById("referencias").value;
     const habilidades = document.getElementById("habilidades").value;
     const foto = document.getElementById("foto").files[0];
 
     // VRevisa  si todos los campos están completos.
-    if (!nombre || !estudios || !referencias || !habilidades || !foto) {
+    if (!nombre || !sobre ti || !estudios || !referencias || !habilidades || !foto) {
         // Mostrar mensaje de error si algún campo está vacío
         document.getElementById("error-message").classList.remove("hidden");
         return; // Detener la ejecución si hay error
@@ -25,6 +28,7 @@ document.getElemntById("Sobre-ti").value;
 
     // Mostrar la información en la ventana modal
     document.getElementById("nombre-result").textContent = nombre;
+document.getElementById("sobre ti-result").textContent = sobreti;
     document.getElementById("estudios-result").textContent = estudios;
     document.getElementById("referencias-result").textContent = referencias;
     document.getElementById("habilidades-result").textContent = habilidades;
@@ -45,7 +49,8 @@ document.getElemntById("Sobre-ti").value;
 document.getElementById("eliminar-btn").addEventListener("click", function() {
     // Borrar los datos en el modal
     document.getElementById("nombre-result").textContent = '';
-    document.getElementById("estudios-result").textContent = '';
+   document.getElementById("sobre ti-result").textContent = '';
+ document.getElementById("estudios-result").textContent = '';
     document.getElementById("referencias-result").textContent = '';
     document.getElementById("habilidades-result").textContent = '';
     document.getElementById("foto-result").style.display = "none";

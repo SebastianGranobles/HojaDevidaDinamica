@@ -5,19 +5,14 @@ document.getElementById("form-hoja-vida").addEventListener("submit", function(ev
 
     // Obtener valores del formulario
     const nombre = document.getElementById("nombre").value;
-
-const sobre ti =
-document.getElementById("Sobre ti").value;
-
-    const estudios =
- document.getElementById("estudios").value;
-
+    const Historia = document.getElementById("Historia").value;
+    const estudios = document.getElementById("estudios").value;
     const referencias = document.getElementById("referencias").value;
     const habilidades = document.getElementById("habilidades").value;
     const foto = document.getElementById("foto").files[0];
 
     // VRevisa  si todos los campos están completos.
-    if (!nombre || !sobre ti || !estudios || !referencias || !habilidades || !foto) {
+    if (!nombre || !estudios || !referencias || !habilidades || !foto) {
         // Mostrar mensaje de error si algún campo está vacío
         document.getElementById("error-message").classList.remove("hidden");
         return; // Detener la ejecución si hay error
@@ -28,7 +23,7 @@ document.getElementById("Sobre ti").value;
 
     // Mostrar la información en la ventana modal
     document.getElementById("nombre-result").textContent = nombre;
-document.getElementById("sobre ti-result").textContent = sobreti;
+    document.getElementById("Historia-result").textContent = Historia;
     document.getElementById("estudios-result").textContent = estudios;
     document.getElementById("referencias-result").textContent = referencias;
     document.getElementById("habilidades-result").textContent = habilidades;
@@ -49,8 +44,8 @@ document.getElementById("sobre ti-result").textContent = sobreti;
 document.getElementById("eliminar-btn").addEventListener("click", function() {
     // Borrar los datos en el modal
     document.getElementById("nombre-result").textContent = '';
-   document.getElementById("sobre ti-result").textContent = '';
- document.getElementById("estudios-result").textContent = '';
+    document.getElementById("Historia-result").textContent = '';
+    document.getElementById("estudios-result").textContent = '';
     document.getElementById("referencias-result").textContent = '';
     document.getElementById("habilidades-result").textContent = '';
     document.getElementById("foto-result").style.display = "none";
@@ -58,3 +53,15 @@ document.getElementById("eliminar-btn").addEventListener("click", function() {
     // Cerrar el modal después de borrar la información
     document.getElementById("myModal").style.display = "none";
 });
+
+// Función para cerrar la ventana modal
+document.getElementById("modal-close").addEventListener("click", function() {
+    document.getElementById("myModal").style.display = "none";
+});
+
+// Cerrar la ventana modal si el usuario hace clic fuera de ella
+window.onclick = function(event) {
+    if (event.target == document.getElementById("myModal")) {
+        document.getElementById("myModal").style.display = "none";
+    }
+};
